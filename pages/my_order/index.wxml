@@ -1,0 +1,39 @@
+<!--pages/my_order/index.wxml-->
+<!-- <view class="tab_class">
+  <view class="{{cate==-1?'tab_active_class':''}}" bindtap="swipeTab" data-cat="0">全部</view>
+  <view class="{{cate==0?'tab_active_class':''}}" bindtap="swipeTab" data-cat="1">待付款</view>
+  <view class="{{cate==1?'tab_active_class':''}}" bindtap="swipeTab" data-cat="2">养殖中</view>
+  <view class="{{cate==2?'tab_active_class':''}}" bindtap="swipeTab" data-cat="3">待收货</view>
+  <view class="{{cate==3?'tab_active_class':''}}" bindtap="swipeTab" data-cat="4">已完成</view>
+  <view class="{{cate==4?'tab_active_class':''}}" bindtap="swipeTab" data-cat="5">已取消</view>
+</view>
+
+<swiper indicator-dots="true" indicator-active-color="#09BB07"
+    autoplay="true" interval="3000" duration="500">
+  <block wx:for="{{list}}" wx:key='index' wx:for-index="index" wx:for-item="itemName">
+    <swiper-item>
+      <van-panel title="订单号: {{item.orderno}}" status="{{order_status_arr[item.status]}}" wx:if="list_status&&item.data.length>0" class='order_box' wx:for="{{item.data}}" wx:key='key' bingtap="goOrder" data-orno="item.orderno">
+        <van-card wx:for='(itemName, id_key) in item.goods' :key='id_key'
+                  num="1"
+                  :desc="itemName.desc"
+                  :title="itemName.title"
+                  thumb="https://5gyzr.fengtusports.cn/images/pig.png"
+                  style="background-color: #ffffff"
+        >
+          <div slot="price"><span class="van-card__price-currency">¥</span><span class="van-card__price-integer">{{itemName.total|formatPrice}}</span></div>
+        </van-card>
+        <template #footer v-if='item.status==0||item.status==2'>
+          <van-button v-if='item.status==0&&item.user_status==0' size="small" @click.native.stop="cancelOrder(item,key,index)">取消订单</van-button>
+          <van-button v-if='item.status==0&&item.user_status==0' size="small" type="primary" @click.native.stop="goPay(item.user_orderno)">去支付</van-button>
+          <van-button v-if='item.is_owner==1&&item.status==2' size="small" type="primary" @click.native.stop="receivingOrder(item,key,index)">确认收货</van-button>
+        </template>
+      </van-panel>
+      <van-empty
+              v-if="tab.data.length===0"
+              class="custom-image"
+              :image="empty_image"
+              description="暂无数据"
+      ></van-empty>
+    </swiper-item>
+  </block>
+</swiper> -->

@@ -1,0 +1,12 @@
+.container{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.content{
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+.company-name{
+  text-align: right;
+  margin-top: 30rpx;
+}

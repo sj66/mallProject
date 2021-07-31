@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-count-down": "@vant/weapp/count-down/index"
+  },
+  "navigationBarTitleText": "搜索"
+}

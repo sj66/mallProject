@@ -1,0 +1,41 @@
+/* pages/exchange/index.wxss */
+page{  
+  height: 100%;  
+  background-color: #F3F4F6;
+} 
+/* 单个图片容器的样式 */
+.img_item {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #ffffff;
+  font-size: 24rpx;
+  border: 2rpx solid #eeeeee;
+  box-sizing: border-box;
+
+}
+.item_info{
+  border-top:2rpx solid #eeeeee;
+}
+.product-name{
+  color: #000;
+  /* height: 28px; */
+  text-align:left;
+   margin: 0rpx 10rpx; 
+   margin-bottom: 10rpx; 
+}
+.product-price-wrap .product-price-new{
+  color: #e80080;
+  margin-left:10rpx;
+  font-weight:900;
+}
+.product-price-wrap .product-price-old{
+  color: #888;
+  text-decoration: line-through;
+  padding-left: 4rpx;
+}
+.product-price-wrap .discount{
+  margin-left: 60rpx;
+  background-color: #000;
+  color: #fff;
+}

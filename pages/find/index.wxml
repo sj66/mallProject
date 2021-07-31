@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="directions">如果我们并没有您想采购的商品，欢迎在此提交您的需求</view>
+  <!-- <view class="note">注意：仅可提交处方药</view> -->
+  <view class="list">
+    <input class="list-input" placeholder="通用名（必填）"/>
+  </view>
+  <view class="list">
+    <input class="list-input" placeholder="商品名（非必填）"/>
+  </view>
+  <view class="list">
+    <input class="list-input" placeholder="规格（必填）"/>
+  </view>
+  <view class="list">
+    <input class="list-input" placeholder="生产厂家（必填）"/>
+  </view>
+  <view class="list">
+    <input class="list-input" type="number" placeholder="购买量（非必填）"/>
+  </view>
+  <!-- 选择图片 -->
+  <view class='up-pic'>
+    <view class='flex pic-box'>
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='ap-box'>
+          <view class='add-pic'>
+            <image class='add-pic' src='{{item}}'></image>
+            <view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+              <image class='img-close' src='/public/orther_img/icon_close2@2x.png'></image>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class='add-pic' bindtap='addPic1' wx:if="{{imgbox.length<9}}">
+        <image class='img-pic' src='/public/orther_img/add_pic@2x.png'></image> 
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{tempFilePaths}}" wx:key="index">
+    <image src="{{item }}" bindtap="listenerButtonPreviewImage" data-index="{{index}}" style="width: 100%;"/>
+  </block>
+  <button style="margin-top:200rpx;color:#ffffff;background-color:#09bb07">提交</button> 
+  <view class="feedback">找药反馈</view>
+</view>

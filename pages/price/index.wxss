@@ -1,0 +1,140 @@
+page{
+  background-color: #eeeeee;
+  width:100%
+}
+page>.container{
+  width:100%;
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+/*搜索样式  */
+.search{
+  position: fixed;
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  z-index: 99;
+}
+.search-header{
+  width: 80%;
+  height: 70rpx;
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  border-radius: 10rpx;
+  border: 2rpx solid #eeeeee;
+  margin-left: 20rpx;
+}
+.search-header image{
+  width: 50rpx;
+  height: 50rpx;
+  padding: 0 20rpx;
+}
+.search-input{
+  width: 80%;
+  height: 70rpx;
+  font-size: 24rpx;
+}
+/* 时间排序 */
+.search_one{
+  padding: 0 20rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #545458;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.lift{
+  width: 30rpx;
+  height: 30rpx;
+}
+.lift image{
+  width: 100%;
+  height: 100%;
+}
+/* 商品列表 */
+.productlist{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 2rpx solid #eeeeee;
+  margin-top: 114rpx;
+}
+.productlist-li{
+  float: left;
+  width: 50%;
+  cursor: pointer;
+  border-bottom: 2rpx solid #eeeeee;
+  border-right: 2rpx solid #eeeeee;
+  background-color: #ffff;
+  box-sizing: border-box;
+}
+.product-pic{
+  width: 350rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  background-color: #ffffff;
+  /* padding-bottom: 25rpx; */
+}
+.product-pic image{
+  width: 100%;
+  height: 100%;
+}
+.product-activity{
+  /* height: 130rpx;
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center; */
+  height: 88rpx;
+  line-height: 44rpx;
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  display: -webkit-box;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tui-countdown-content{
+  display: flex;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.van-count-down{
+  color: #ff0000 !important;
+}
+.product-bottom{
+  margin:20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-price{
+  font-size: 32rpx;
+  color: #ff0000;
+}
+.product-btn{
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 25rpx;
+  color: #ffffff;
+  background-color: #ff0000;
+}
+

@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <van-radio-group value="{{ radio }}" bind:change="onChange" style="display: flex;justify-content: space-around;align-items: center;margin-top: 30rpx;">
+    <van-radio name="1">已开户</van-radio>
+    <van-radio name="2">新开户</van-radio>
+  </van-radio-group>
+  <view class="title">补充你的企业信息</view>
+  <van-cell-group>
+    <van-field
+      model:value="{{ company }}"
+      label="企业名称："
+      placeholder="请输入营业执照全称"
+      title-width="5.2em"
+    />
+
+    <van-field
+      model:value="{{ name }}"
+      label="真实姓名："
+      placeholder="请输入真实姓名"
+      title-width="5.2em"
+    />
+    <van-field
+      model:value="{{ phone }}"
+      clearable
+      label="座机号码："
+      placeholder="请输入座机号码"
+      title-width="5.2em"
+      maxlength='11'
+      auto-focus
+    />
+  </van-cell-group>
+  <van-button custom-class="btn_complete" type="info" block  bindtap="onComplete">完成</van-button>
+</view>

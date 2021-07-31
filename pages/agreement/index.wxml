@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">可签订</view>
+    <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待履行</view>
+    <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已完成</view>
+  </view>
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item class="swiper-item">
+      <scroll-view enable-flex="true" scroll-y="true" class="contractlist">
+        <view class="contractlist-li" wx:for="{{contractList}}" wx:key="index" bindtap="onDetails" data-id="{{item.id}}">
+          <view class="contractinfo">
+            <image class="userinfo-avatar" src="/public/orther_img/agreement_bg.jpg"></image>
+            <view class="usermotto">
+              <view class="username">{{item.name}}</view>
+              <view class="usernumber">合同期限：{{item.start_time}}至{{item.end_time}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <scroll-view enable-flex="true" scroll-y="true" class="contractlist">
+        <view class="contractlist-li" wx:for="{{contractList}}" wx:key="index" bindtap="onDetails" data-id="{{item.id}}">
+          <view class="contractinfo">
+            <image class="userinfo-avatar" src="/public/orther_img/agreement_bg.jpg"></image>
+            <view class="usermotto">
+              <view class="username">{{item.name}}</view>
+              <view class="usernumber">合同期限：{{item.start_time}}至{{item.end_time}}</view>
+              <!-- <view class="userschedule">
+                <view>进度：</view>
+                <view class="progress">  
+                  <view class="bar" style="width: 40%;"></view>  
+                </view> 
+              </view> -->
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item> 
+    <swiper-item class="swiper-item">
+      <scroll-view enable-flex="true" scroll-y="true" class="contractlist">
+        <view class="contractlist-li" wx:for="{{contractList}}" wx:key="index" bindtap="onDetails" data-id="{{item.id}}">
+          <view class="contractinfo">
+            <image class="userinfo-avatar" src="/public/orther_img/agreement_bg.jpg"></image>
+            <view class="usermotto">
+              <view class="username">{{item.name}}</view>
+              <view class="usernumber">合同期限：{{item.start_time}}至{{item.end_time}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

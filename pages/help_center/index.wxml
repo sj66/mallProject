@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+  <block wx:for="{{arrdata}}" wx:key="index">
+    <view class="centent_title" data-index="{{index}}" bindtap="onOpen">
+      <view class="title" >{{item.name}}?</view>
+      <image wx:if="{{item.isTrue==true}}" src="/public/orther_img/ic_down.png"></image>
+      <image wx:if="{{item.isTrue==false}}" src="/public/orther_img/ic_top.png"></image>
+    </view>
+    <view class="content_detail" wx:if="{{item.isTrue}}">
+      <text>{{item.content}}</text>
+    </view>
+  </block>
+</view>

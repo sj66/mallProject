@@ -1,0 +1,13 @@
+<!--pages/group_list/index.wxml-->
+<view class="container">
+  <view class="group-list">
+    <view class='group-list-li' wx:for='{{msgList}}' wx:key='index'>
+      <view class="group-list-li-left">
+        <view class="group-list-li-name">{{item.name}}</view>
+        <view class="group-list-li-phone">{{item.phone}}</view>
+        <view class="group-list-li-format">{{item.format}}</view>
+      </view>
+      <view class="group-list-li-date">{{item.date}}</view>
+    </view>
+  </view>
+</view>

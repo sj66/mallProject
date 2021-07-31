@@ -1,0 +1,54 @@
+<!--pages/shop_car/index.wxml-->
+<view class='empty_box' wx:if='{{goods_arr.length==0}}'>
+  <view class='empty_txt1'>购物车空空如也</view>
+  <view class='empty_txt2'>快给我挑点宝贝</view>
+  <view class='empty_btn' bindtap='goShop'>去逛逛</view>
+</view>
+<wxs module="filters" src="./filename.wxs"></wxs>
+<view class='goods_list'>
+  <van-swipe-cell right-width="{{ 65 }}" wx:for='{{goods_arr}}' wx:key="index" async-close bind:close='swipe_close'
+    data-x="{{index}}" class="goods_list-li">
+    <view class='goods_box'>
+      <view class='select_box{{item.selected?"":" active"}}' bindtap='select_goods' data-id='{{item.id}}'
+        data-x='{{index}}'>
+        <image class='{{item.selected?"":"hidden"}}' src='/public/images/car/icon_correct.png' mode="aspectFit"></image>
+      </view>
+      <view class='goods_img_box'>
+        <image src='{{item.img}}' mode="aspectFit"></image>
+      </view>
+      <view class='goods_detail_box'>
+        <view class='goods_name'>{{item.name}}</view>
+        <view class='goods_weight'>{{item.specs}}</view>
+        <view class='goods_company'>{{item.company}}</view>
+        <view class='goods_order_box'>
+          <view class='goods_price'>¥ {{item.price}}</view>
+          <view class='goods_num_box'>
+            <van-stepper value="{{ item.car_num }}" data-id='{{item.goods_id}}' data-x='{{index}}' min="1"
+              max="{{item.qty}}" integer bind:change="numChange" />
+            <!-- <image src='/public/images/shop/icon_minus.png' mode="aspectFit" data-id='{{item.id}}' bindtap='goods_minus' data-x='{{index}}'></image>
+                <view class='goods_num'>{{item.car_num>0?item.car_num:''}}</view>
+                <image src='/public/images/shop/icon_add.png' mode="aspectFit" data-id='{{item.id}}' bindtap='goods_add' data-x='{{index}}'></image> -->
+          </view>
+        </view>
+        <view class='goods_total'>单品小计：￥{{filters.toFix(item.price*item.car_num)}}</view>
+      </view>
+    </view>
+    <view wx:if="{{sales_info}}" class="goods_activity">{{sales_info}}</view>
+    <view slot="right" class="del_btn"><text>删除</text></view>
+  </van-swipe-cell>
+</view>
+<view class='order_bot_box'>
+  <view class='all_box' bindtap='select_all'>
+    <view class='all_icon_box{{all_select?"":" active"}}'>
+      <image class='{{all_select?"":"hidden"}}' src='/public/images/car/icon_correct.png' mode="aspectFit"></image>
+    </view>
+    <text>全选</text>
+  </view>
+  <view class='order_total_box'>
+    <view class='order_total_cont'>
+      合计：<view class='order_total_txt'>¥ <text>{{total}}</text></view>
+    </view>
+    <view class='order_total_tip'>包邮</view>
+  </view>
+  <view class='order_btn{{order_status?" active":""}}' bindtap='goOrder'>去下单</view>
+</view>

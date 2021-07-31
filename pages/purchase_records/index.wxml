@@ -1,0 +1,33 @@
+<!--pages/purchase_records/index.wxml-->
+<view class="container">
+  <view class="record">
+    <view class="on">
+      <text class="action">单据编号：HL2021031799555350210</text>
+      <text class="money">已开票</text>
+    </view>
+    <view class="under">
+      <text class="time">购进日期: <text class="detail">2017-07-18 09:18</text> </text>
+      <text class="succerr">开单员：张三</text>
+    </view>
+  </view>
+  <view class="record">
+    <view class="on">
+      <text class="action">单据编号：HL2021031954535410327</text>
+      <text class="money">已付款</text>
+    </view>
+    <view class="under">
+      <text class="time">购进日期: <text class="detail">2017-07-15 14:33</text> </text>
+      <text class="succerr">开单员：李四</text>
+    </view>
+  </view>
+  <view class="record">
+    <view class="on">
+      <text class="action">单据编号：HL202103149750515251</text>
+      <text class="money">已开票</text>
+    </view>
+    <view class="under">
+      <text class="time">购进日期: <text class="detail">2017-07-05 10:21</text> </text>
+      <text class="succerr">开单员：王五</text>
+    </view>
+  </view>
+</view>

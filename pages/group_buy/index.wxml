@@ -1,0 +1,78 @@
+<!--pages/group_buy/index.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="tab-item">
+      时间
+      <!-- <view class="timeSort">
+        <image src="/public/orther_img/jiantouarrow_top.png"></image>
+        <image src="/public/orther_img/jiantouarrow_top_active.png"></image>
+        <image src="/public/orther_img/jiantouarrow_bottom.png" style="margin-top:2px"></image>
+        <image src="/public/orther_img/jiantouarrow_bottom_active.png"></image>
+      </view> -->
+    </view>
+    <view class="tab-item">
+      销量
+      <!-- <view class="timeSort">
+        <image src="/public/orther_img/jiantouarrow_top.png"></image>
+        <image src="/public/orther_img/jiantouarrow_top_active.png"></image>
+        <image src="/public/orther_img/jiantouarrow_bottom.png" style="margin-top:2px"></image>
+        <image src="/public/orther_img/jiantouarrow_bottom_active.png"></image>
+      </view> -->
+    </view>
+  </view>
+  <view class="goodslist">
+    <view class="goodslist-li" bindtap="goDetail">
+      <view class='tui-countdown-content'>
+        <text class="tui-countdown-text">离团购结束：</text>10天19时59分08秒
+      </view>
+      <view class="goodslist-li-top">
+        <view class="goodslist-li-pic">
+          <image src="/public/orther_img/produce_bg.png"></image>
+        </view>
+        <view class="goodslist-li-content">
+          <view class="goodslist-li-number">39564</view>
+          <view class="goodslist-li-name">清热消炎宁胶囊</view>
+          <view class="goodslist-li-format">1.5mg*1片</view>
+          <view class="goodslist-li-factory">上海美优制药有限公司</view>
+          <view class="goodslist-li-time">生产日期：2020-11-20</view>
+          <view class="goodslist-li-time">有效日期：2022-11-20</view>
+          <view class="goodslist-li-price">拼团价<text class="price-new">￥6.30</text><text class="price-old">￥12.50</text></view>
+        </view>
+      </view>
+      <view class="goodslist-li-bottom">
+        <view class="purchase">20盒成团</view>
+        <van-stepper value="{{ order.car_num }}" min="1" max="4" input-width="50px" button-size="25px" integer bind:change="numChange" />
+        <view class="goodslist-li-btn" catchtap="onJoin">马上参团</view>
+      </view>
+      <view class="joinList">
+        <view class="title">
+          <view style="margin-left:20rpx">300人已参与拼团</view>
+          <view catchtap="onJoinList">更多伙伴<span style="margin-left:10rpx;margin-right:20rpx">></span></view>
+        </view>         
+        <swiper class='swiper-container' autoplay='true' vertical='true' circular='true' interval='2000'>
+            <block wx:for='{{msgList}}' wx:key='index'>
+                <navigator url='' open-type='navigate'>
+                    <swiper-item>
+                        <view class='swiper-item'>
+                          <view class="swiper-item-left">
+                            <view class="swiper-item-name">{{item.name}}</view>
+                            <view class="swiper-item-phone">{{item.phone}}</view>
+                            <view class="swiper-item-format">{{item.format}}</view>
+                          </view>
+                          <view class="swiper-item-date">{{item.date}}</view>
+                        </view>
+                    </swiper-item>
+                </navigator>
+            </block>
+        </swiper>
+      </view>
+      <view class="progress-text">
+        <view>已拼9870盒/优惠金额1290元</view>
+        <view>40%</view>
+      </view>
+      <view class="progress">
+        <view class="bar" style="width: 40%;"></view>  
+      </view>
+    </view>
+  </view>
+</view>

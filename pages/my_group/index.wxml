@@ -1,0 +1,118 @@
+<!--pages/my_group/index.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="tab-item {{currentTab==0 ? 'click' : ''}}" data-current="0" bindtap="swichNav">未开团</view>
+    <view class="tab-item {{currentTab==1 ? 'click' : ''}}" data-current="1" bindtap="swichNav">拼团中</view>
+    <view class="tab-item {{currentTab==2 ? 'click' : ''}}" data-current="2" bindtap="swichNav">拼团成功</view>
+    <view class="tab-item {{currentTab==3 ? 'click' : ''}}" data-current="3" bindtap="swichNav">拼团失败</view>
+    <view class="tab-item {{currentTab==4 ? 'click' : ''}}" data-current="4" bindtap="swichNav">已关闭</view>
+  </view>
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item>
+      <view class="goodslist">
+        <scroll-view enable-flex="true" scroll-y="true">
+          <view wx:for="{{list}}" wx:key="index" class="goodslist-li" bindtap="onGoodsDetail">
+            <view class="goodslist-li-pic">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="goodslist-li-content">
+              <view class="goodslist-li-coding">{{item.coding}}</view>
+              <view class="goodslist-li-name">{{item.name}}</view>
+              <view class="goodslist-li-format">{{item.format}}</view>
+              <view class="goodslist-li-factory">{{item.factory}}</view>
+              <view class="goodslist-li-startDate">{{item.startDate}}</view>
+              <view class="goodslist-li-endDate">{{item.endDate}}</view>
+              <view class="goodslist-li-price">拼团价<text class="price-new">￥{{item.newPrice}}</text><text class="price-old">￥{{item.oldPrice}}</text></view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item> 
+    <swiper-item>
+      <view class="goodslist">
+        <scroll-view enable-flex="true" scroll-y="true">
+          <view wx:for="{{list}}" wx:key="index" class="goodslist-li" bindtap="onGoodsDetail">
+            <view class="goodslist-li-pic">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="goodslist-li-content">
+              <view class="goodslist-li-coding">{{item.coding}}</view>
+              <view class="goodslist-li-name">{{item.name}}</view>
+              <view class="goodslist-li-format">{{item.format}}</view>
+              <view class="goodslist-li-factory">{{item.factory}}</view>
+              <view class="goodslist-li-startDate">{{item.startDate}}</view>
+              <view class="goodslist-li-endDate">{{item.endDate}}</view>
+              <view class="goodslist-li-price">拼团价<text class="price-new">￥{{item.newPrice}}</text><text class="price-old">￥{{item.oldPrice}}</text></view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="goodslist">
+        <scroll-view enable-flex="true" scroll-y="true">
+          <view wx:for="{{list}}" wx:key="index" class="goodslist-li" bindtap="onGoodsDetail">
+            <view class="goodslist-li-pic">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="goodslist-li-content">
+              <view class="goodslist-li-coding">{{item.coding}}</view>
+              <view class="goodslist-li-name">{{item.name}}</view>
+              <view class="goodslist-li-format">{{item.format}}</view>
+              <view class="goodslist-li-factory">{{item.factory}}</view>
+              <view class="goodslist-li-startDate">{{item.startDate}}</view>
+              <view class="goodslist-li-endDate">{{item.endDate}}</view>
+              <view class="goodslist-li-price">拼团价<text class="price-new">￥{{item.newPrice}}</text><text class="price-old">￥{{item.oldPrice}}</text></view>
+            </view>
+            <view class="goodslist-li-sign">
+              <image src="/public/orther_img/success.png"></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="goodslist" style="filter:grayscale(100%);">
+        <scroll-view enable-flex="true" scroll-y="true">
+          <view wx:for="{{list}}" wx:key="index" class="goodslist-li" bindtap="onGoodsDetail">
+            <view class="goodslist-li-pic">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="goodslist-li-content">
+              <view class="goodslist-li-coding">{{item.coding}}</view>
+              <view class="goodslist-li-name">{{item.name}}</view>
+              <view class="goodslist-li-format">{{item.format}}</view>
+              <view class="goodslist-li-factory">{{item.factory}}</view>
+              <view class="goodslist-li-startDate">{{item.startDate}}</view>
+              <view class="goodslist-li-endDate">{{item.endDate}}</view>
+              <view class="goodslist-li-price">拼团价<text class="price-new">￥{{item.newPrice}}</text><text class="price-old">￥{{item.oldPrice}}</text></view>
+            </view>
+            <view class="goodslist-li-sign">
+              <image src="/public/orther_img/fail.png"></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="goodslist" style="filter:grayscale(100%);">
+        <scroll-view enable-flex="true" scroll-y="true">
+          <view wx:for="{{list}}" wx:key="index" class="goodslist-li" bindtap="onGoodsDetail">
+            <view class="goodslist-li-pic">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="goodslist-li-content">
+              <view class="goodslist-li-coding">{{item.coding}}</view>
+              <view class="goodslist-li-name">{{item.name}}</view>
+              <view class="goodslist-li-format">{{item.format}}</view>
+              <view class="goodslist-li-factory">{{item.factory}}</view>
+              <view class="goodslist-li-startDate">{{item.startDate}}</view>
+              <view class="goodslist-li-endDate">{{item.endDate}}</view>
+              <view class="goodslist-li-price">拼团价<text class="price-new">￥{{item.newPrice}}</text><text class="price-old">￥{{item.oldPrice}}</text></view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

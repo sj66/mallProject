@@ -1,0 +1,151 @@
+<!--pages/kind/index.wxml-->
+<view class="container">
+  <view class="search">
+    <view class="search-header">
+      <image src="/public/orther_img/search.png"></image>
+      <input class="search-input" bindinput='query' placeholder="搜索" />
+    </view>
+    <div class="search_one" bindtap="reverse">
+      时间
+      <div class="lift">
+        <image src="/public/orther_img/lift.png"></image>
+      </div>
+    </div>
+  </view>
+  <!-- <view class="goodslist">
+    <view class="goodslist-li" bindtap="goDetail" wx:for="{{list}}" wx:key="index" data-gid="{{item.goods_id}}">
+        <view class='tui-countdown-content'>离活动结束：
+          <van-count-down time="{{ endTime }}" format="DD天HH:mm:ss" />
+        </view>
+        <view class="goodslist-li-top">
+          <view class="goodslist-li-pic">
+            <image src="{{item.img}}"></image>
+          </view>
+          <view class="goodslist-li-content">
+            <view class="goodslist-li-number">{{item.goods_id}}</view>
+            <view class="goodslist-li-name">{{item.name}}</view>
+            <view class="goodslist-li-format">{{item.specs}}/{{item.unit}}</view>
+            <view class="goodslist-li-factory">{{item.company}}</view>
+            <view class="goodslist-li-pack">中包装数：{{ item.mid_pack_num }}<text style="padding-left:40rpx">大包装数：{{ item.big_pack_num }}</text></view>
+            <view class="goodslist-li-time">生产日期：{{ item.prod_date }}</view>
+            <view class="goodslist-li-time">有效日期：{{item.valid_date}}</view>
+            <view class="goodslist-li-price"><text class="price-new">￥{{item.price}}</text></view>
+          </view>
+        </view>
+        <view class="goodslist-li-bottom">
+          <view class="purchase">限购：100</view>
+          <view class="progress">已抢40%
+            <view class="bar" style="width: 40%;"></view>  
+          </view>
+          <view class="goodslist-li-btn" data-index="{{index}}" catchtap="showPopup">马上抢</view>
+        </view>
+      </view>
+  </view> -->
+  <view class="goodslist">
+    <view class="goodslist-li">
+        <view class='tui-countdown-content1'>离活动结束：
+          <van-count-down time="{{ time }}" format="DD天HH:mm:ss" />
+        </view>
+        <view class="goodslist-li-top">
+          <view class="goodslist-li-pic">
+            <image src="/public/orther_img/produce_bg.png"></image>
+          </view>
+          <view class="goodslist-li-content">
+            <view class="goodslist-li-number">45432</view>
+            <view class="goodslist-li-name">清热消炎宁胶囊</view>
+            <view class="goodslist-li-format">0.5g*36粒</view>
+            <view class="goodslist-li-factory">广东五虎山药业有限公司</view>
+            <view class="goodslist-li-pack">中包装数：10<text style="padding-left:40rpx">大包装数：200</text></view>
+            <view class="goodslist-li-time">生产日期：2020-10-20</view>
+            <view class="goodslist-li-time">有效日期：2022-12-20</view>
+            <view class="goodslist-li-price"><text class="price-new">￥13.20</text></view>
+            <!-- <view class="goodslist-li-price"><text class="price-new">￥6.30</text><text class="price-old">原价￥12.50</text></view> -->
+          </view>
+        </view>
+        <view class="goodslist-li-bottom">
+          <view class="purchase">限购：100</view>
+          <view class="progress">已抢40%
+            <view class="bar" style="width: 40%;"></view>  
+          </view>
+          <view class="goodslist-li-btn" data-index="{{index}}" catchtap="showPopup">马上抢</view>
+        </view>
+      </view>
+  </view>
+  <view class="btn_go_car" catchtap="goCar">
+    <van-icon wx:if="dot" name="cart" color="#ffffff" size="50rpx" custom-style="position: relative;top:16rpx;"/>
+    <van-icon wx:else name="cart" color="#ffffff" size="50rpx" custom-style="position: relative;top:16rpx;" dot/>
+  </view>
+  <van-popup show="{{ show }}" position="bottom" bind:close="closePopup" closeable round>
+    <view class="tui-popup-box">
+      <view class="tui-product-box tui-recommend">
+        <view class="tui-popup-sub">猜您想要的产品</view>
+        <view class="tui-product-box tui-goods">
+          <image class="tui-popup-img" src="../../public/orther_img/produce_bg.png" />
+          <view class="tui-popup-price">
+            <view class="tui-pro-title">56333</view>
+            <view class="tui-pro-title">清热消炎宁胶囊</view>
+            <view class="tui-sub-title tui-size tui-gray">0.5g*36粒</view>
+            <view class="tui-sub-title tui-size tui-gray" style="padding: 0;">广东五虎山药业有限公司</view>
+            <view class="tui-sub-title tui-pack"><text>中包装数：0</text><text style="padding-left:40rpx">大包装数：230</text></view>
+            <view class="tui-sub-title tui-startTime">生产日期：2020-06-20</view>
+            <view class="tui-sub-title tui-endTime">有效日期：2022-06-20</view>
+            <view class="tui-merge">
+            <view class="tui-amount tui-bold">￥13.20</view>
+            <view class="tui-button">
+              <view class="tui-btn" style="margin-right:20rpx">收藏</view>
+              <view class="tui-btn">下单</view>
+            </view>
+          </view>
+          </view>
+        </view>
+        <view class="sales_info_box">
+          <view class="sales_info_left">
+            <view class="sales_info_icon">买赠</view>
+          </view>
+          <view class="sales_info_cont">10瓶送1瓶</view>
+          <view class='tui-countdown-content'>
+            <van-count-down time="{{time}}"format="剩余:DD天HH时mm分ss秒" />
+          </view>
+        </view>
+      </view>
+      <view class="tui-product-box tui-padding">
+        <image class="tui-popup-img" src="/public/orther_img/produce_bg.png" />
+        <view class="tui-popup-price">
+          <view class="tui-pro-title">56333</view>
+          <view class="tui-pro-title">清热消炎宁胶囊</view>
+          <view class="tui-sub-title tui-size tui-gray">0.5g*36粒</view>
+          <view class="tui-sub-title tui-size tui-gray" style="padding: 0;">广东五虎山药业有限公司</view>
+          <view class="tui-sub-title tui-pack">中包装数：0<text
+            style="padding-left:40rpx">大包装数：230</text></view>
+          <view class="tui-sub-title tui-startTime">生产日期：2020-06-20</view>
+          <view class="tui-sub-title tui-endTime">有效日期：2022-06-20</view>
+          <view class="tui-amount tui-bold">￥13.20</view>
+          <!-- <view class="tui-number">编号:4373299399393</view> -->
+        </view>
+      </view>
+      <view class="sales_info_box">
+        <view class="sales_info_left">
+          <view class="sales_info_icon">买赠</view>
+        </view>
+        <view class="sales_info_cont">10瓶送1瓶</view>
+        <view class='tui-countdown-content'>
+          <van-count-down time="{{time}}"format="剩余:DD天HH时mm分ss秒" />
+        </view>
+      </view>
+      <view class="tui-scrollview-box">
+        <view class="tui-number-box">
+          <view>数量</view>
+          <van-stepper value="{{ order.car_num }}" min="1" integer bind:change="numChange" />
+        </view>
+      </view>
+      <view class="tui-operation tui-operation-right tui-right-flex tui-popup-btn">
+        <view class="tui-flex-1">
+          <van-button custom-style="width:100%;font-size:28rpx;height:68rpx;" round type="warning" bindtap="addToCar">加入购物车</van-button>
+        </view>
+        <view class="tui-flex-1">
+          <van-button custom-style="width:100%;font-size:28rpx;height:68rpx;" round type="danger" bindtap="goBuy">立即下单</van-button>
+        </view>
+      </view>
+    </view>
+  </van-popup>
+</view>

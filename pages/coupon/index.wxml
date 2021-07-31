@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">未使用</view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已使用</view>
+    <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已过期</view>
+  </view>
+  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item>
+      <view class="couponlist">
+        <view class="couponlist-li" wx:for="{{couponList}}" wx:key="index">
+          <view class="couponlist-li-price">￥{{item.price}}</view>
+          <view class="couponlist-li-title">
+            <view class="couponlist-li-cost">满{{item.cost}}可用</view>
+            <view class="couponlist-li-time">有效期至{{item.time}}</view>
+          </view>
+          <view class="couponlist-li-btn">去使用</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="couponlist">
+        <view class="couponlist-li" wx:for="{{couponList}}" wx:key="index" style="filter:grayscale(100%);">
+          <view class="couponlist-li-price">￥{{item.price}}</view>
+          <view class="couponlist-li-title">
+            <view class="couponlist-li-cost">满{{item.cost}}可用</view>
+            <view class="couponlist-li-time">有效期至{{item.time}}</view>
+          </view>
+          <view class="couponlist-li-btn">已使用</view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="couponlist">
+        <view class="couponlist-li" wx:for="{{couponList}}" wx:key="index" style="filter:grayscale(100%);">
+          <view class="couponlist-li-price">￥{{item.price}}</view>
+          <view class="couponlist-li-title">
+            <view class="couponlist-li-cost">满{{item.cost}}可用</view>
+            <view class="couponlist-li-time">有效期至{{item.time}}</view>
+          </view>
+          <view class="couponlist-li-btn">已过期</view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

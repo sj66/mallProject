@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="salesman-info">
+    <view class="salesman-img">
+      <image src="/public/orther_img/produce_bg.png"></image>
+    </view>
+    <view class="salesman-data">
+      <view class="salesman-name">姓名：张三</view>
+      <view class="salesman-department">部门：OTC销售部</view>
+      <view class="salesman-position">职位：业务员</view>
+      <view class="salesman-phone">联系方式：18620003132</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "parser":"/components/parser/parser"
+  },
+  "navigationBarTitleText": "合同协议详情"
+}

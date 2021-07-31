@@ -1,0 +1,49 @@
+<!--pages/product/index.wxml-->
+<view class="container">
+  <scroll-view enable-flex="true" scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+    <view class="banner">
+      <image src="https://cdn.hulukeji.cn/upload/20200814135737_29.jpg"></image>
+    </view>
+    <!-- <view class="product-title">
+    <image src="/public/orther_img/product_bg.png"></image>
+  </view> -->
+
+    <view class="page-header">
+      <view class="page-title">新品推荐</view>
+      <view class="page-msg">优质商品、实力厂家，满满优惠惊喜等着您</view>
+    </view>
+    <view class="goods" style="width:100%">
+      <view class="img_item">
+        <view wx:for="{{col1}}" wx:key="id">
+          <view class="item_info">
+            <image src="{{item.imageurl}}"></image>
+          </view>
+          <view class="product-name">
+            {{item.name}}
+          </view>
+          <view class="product-price-wrap">
+            <p class="product-price-new">￥{{item.newprice}}积分</p>
+            <p class="product-price-old">￥{{item.oldprice}}积分</p>
+          </view>
+        </view>
+      </view>
+      <view class="img_item">
+        <view wx:for="{{col2}}" wx:key="id">
+          <view class="item_info">
+            <image src="{{item.imageurl}}" style="width:100%;height:{{item.height}}px"></image>
+          </view>
+          <view class="product-name">
+            {{item.name}}
+          </view>
+          <view class="product-price-wrap">
+            <p class="product-price-new">￥{{item.newprice}}积分</p>
+            <p class="product-price-old">￥{{item.oldprice}}积分</p>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view style="display:none">
+    <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.imageurl}}" bindload="onImageLoad"></image>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/sign/index.wxml-->
+<view class="calendar">
+  <view class="time">
+    <view>
+      <text class="t_blue">{{year}}</text>年
+      <text class="t_blue">{{month}}</text>月
+      <text class="t_blue">{{date}}</text>日
+    </view>
+  </view>
+  <view class="weekName">
+    <view>日</view>
+    <view class="monday">一</view>
+    <view class="tuesday">二</view>
+    <view class="wednesday">三</view>
+    <view class="thursday">四</view>
+    <view class="friday">五</view>
+    <view>六</view>
+  </view>
+  <view class="week"> 
+    <!-- 填补空格-->
+    <view wx:for="{{nbsp}}" wx:key="id" style="color:#fff;">空</view>
+    <!-- 已过日期 + 已签到日期-->
+    <view wx:for="{{date-1}}" wx:key="id">
+      <!-- <text wx:if="{{item+1==calendarSignData[item+1]}}" style="color:#C589CF;">
+        <text class="iconfont icon-yiqiandao"></text>
+      </text> -->
+      <van-icon wx:if="{{item+1==calendarSignData[item+1]}}" style="font-size:36rpx;color:#C589CF;margin-right: 30rpx;"/>
+      <text wx:else>{{item+1}}</text>
+    </view>
+    <!-- 已签到日期 || 今日-->
+    <view>
+      <!-- <text wx:if="{{date==calendarSignData[date]}}" style="color:#C589CF;">
+        <text class="iconfont icon-yiqiandao"></text>
+        <van-icon name="passed" />
+      </text>
+      <text wx:else style="color:#C589CF;">
+        <text class="iconfont icon-weiqiandao"></text>
+      </text> -->
+      <van-icon wx:if="{{date==calendarSignData[date]}}" name="passed" style="font-size:36rpx;margin-right: 30rpx;"/>
+      <van-icon wx:else name="passed" style="font-size:36rpx;color:#C589CF;margin-right: 30rpx;"/>
+    </view>
+    <!-- 日期-->
+    <view wx:for="{{monthDaySize-date}}" wx:key="id">{{item+date+1}}</view>
+  </view>
+  <view class="calendarSign">
+    <van-button size="large" wx:if="{{!calendarSignData[date]}}" bindtap="calendarSign">签到</van-button>
+    <van-button size="large" wx:else bindtap="calendarSign">今日已签到</van-button>
+  </view>
+</view>

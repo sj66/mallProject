@@ -1,0 +1,126 @@
+/**index.wxss**/
+.container {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  background-color: #eeeeee;
+} 
+.swiper-tab {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 80rpx;
+  background-color: #fff;
+  z-index: 99;
+}
+.tab-item { 
+  text-align: center;
+  font-size: 30rpx;
+  color: #777;
+}
+.swiper {
+  margin-top: 80rpx;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.on {
+  font-weight: bold;
+  color: #ff9908;
+  border-bottom: 5rpx solid #ff9908; 
+}  
+/* 直播列表 */
+.broadcastlist{
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  margin-top: 30rpx;
+}
+.broadcast-title{
+ padding:20rpx 30rpx;
+ display: flex;
+ justify-content: space-between;
+}
+.broadcast-name{
+ font-size: 28rpx;
+ font-weight: bold;
+}
+.broadcast-more{
+ font-size: 24rpx;
+ color: #999999;
+}
+.broadcastlist-li{
+  position: relative;
+  float: left;
+  width: 310rpx;
+  margin-bottom: 30rpx;
+  cursor: pointer;
+}
+.broadcast-pic{
+  width: 310rpx;
+  height: 310rpx;
+  margin: 0 auto;
+}
+.broadcast-pic image{
+  width: 100%;
+  height: 100%;
+}
+/* 回放 */
+.broadcast-play{
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  padding: 10rpx 20rpx 10rpx 0rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 22rpx;
+}
+.replay{
+  padding: 0rpx 20rpx;
+  background-image: -moz-linear-gradient(top, #5f7c9b, #8bb0c0);  
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5f7c9b), to(#8bb0c0));  
+  background-image: -webkit-linear-gradient(top, #5f7c9b, #8bb0c0);  
+  background-image: -o-linear-gradient(top, #5f7c9b, #8bb0c0);  
+  background-image: linear-gradient(to bottom, #5f7c9b, #8bb0c0); 
+  border-radius: 22rpx;
+  margin-right: 10rpx;
+}
+.broadcast-msg{
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.broadcast-info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.broadcast-help{
+  font-size: 24rpx;
+}
+.broadcast-heart{
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 6rpx;
+  margin-right: 10rpx;
+}
+.broadcast-heart image{
+  width: 100%;
+  height: 100%;
+}
+.broadcast-number{
+  font-size: 24rpx;
+  color: #999999;
+}

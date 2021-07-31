@@ -1,0 +1,23 @@
+<!--pages/group_detail/index.wxml-->
+<view class="container">
+  <view class="group-detail">
+    <view class="start-time">下单时间：2020-12-25 14:55:21</view>
+    <view class="goods-detail">
+      <view class="goods-detail-left">
+        <view class="goods-detail-pic">
+          <image src="/public/orther_img/produce_bg.png"></image>
+        </view>
+        <view class="goods-detail-name">小儿热速清颗粒</view>
+      </view>
+      <view class="goods-detail-right">
+        <view class="goods-detail-price">￥6.30</view>
+        <view class="goods-detail-coupon">￥12.50</view>
+        <view class="goods-detail-number">×1</view>
+      </view>
+    </view>
+    <view class="group-name">团长昵称：68246456</view>
+    <view class="group-schedule">拼团进度：已拼了8盒，还差12盒成团</view>
+    <view class="end-time">结束时间：2020-12-26 14:55:21</view>
+    <view class="group-total">共1件商品 合计：￥6.30（含运费：￥0.00）</view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+} 
+.centent_title{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.title{
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 30rpx;
+}
+.centent_title image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 30rpx;
+}
+.content_detail{
+  padding: 20rpx;
+  font-size: 24rpx;
+  text-indent: 2em;
+}

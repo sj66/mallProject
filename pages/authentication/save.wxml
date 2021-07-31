@@ -1,0 +1,78 @@
+<!--pages/authentication/save.wxml-->
+<view class="content">
+		<view>按要求上传证件照片,才能审核通过哦！</view>
+		<view class="upload_container">
+			<view class="upload_cont">
+				<view class="upload_box">
+					<view class="add"></view>
+					<view class="upload_box_img_box" bindtap="chooseImage">
+						<image wx:if="{{img!==''}}" src="{{img}}"></image>
+					</view>
+				</view>
+				<view class="upload_box_desc">{{ title[id] }}</view>
+			</view>
+			<view class="upload_cont">
+				<view class="upload_box">
+					<view class="upload_box_icon">
+            <van-icon name="search" size="56rpx" color="#FFFFFF" />
+					</view>
+					<view class="upload_box_img_box">
+						<image style="width: 100%;height: 100%;" src="https://cdn.hulukeji.cn/images/demo.jpg" bindtap="viewImg"></image>
+					</view>
+					<view class="upload_box_cover"></view>
+				</view>
+				<view class="upload_box_desc">示例</view>
+			</view>
+		</view>
+		<view style="padding: 10px 10px 0;color: #9a9a9a;line-height: 22px;font-size: 13px;">
+			<view>1：照片方向正确，不能颠倒；</view>
+			<view>2：照片上的字能清晰可见，边框完整，能看到国徽；</view>
+			<view>3：如果是复印件，必须加盖红章；</view>
+			<view wx:if="{{id==1}}">4：没有营业执照，可到工商局办理后申请</view>
+		</view>
+		<view style="margin-top: 30px;" wx:if="{{id<5}}">
+    <van-cell-group>
+      <van-field
+        model:value="{{ c_name }}"
+        clearable
+        required
+        label="法定代表人姓名"
+        placeholder="请输入法定代表人姓名"
+        title-width="8.2em"
+        input-align="right"
+         wx:if="{{id==4}}"
+      />
+      <van-field
+        model:value="{{ credit_code }}"
+        clearable
+        required="{{id>0&&id<5}}"
+        label="{{ code_title[id] }}"
+        placeholder="请输入{{ code_title[id] }}"
+        title-width="8.2em"
+        input-align="right"
+      />
+      <van-cell title="有效期" wx:if="{{id==1||id==4}}"
+        required="{{id==1||id==2||id==3}}"
+         value-class="cell_val"
+         title-width="8.2em"
+      >
+        <van-radio-group value="{{ validity_time_cate }}" bind:change="radioChange" style="display: flex;">
+          <van-radio name="1" checked-color="#07c160" label-class="radio_class" icon-size="32rpx">固定日期</van-radio>
+          <van-radio name="2" checked-color="#07c160" label-class="radio_class" icon-size="32rpx" style="margin-left: 10rpx;">长期有效</van-radio>
+        </van-radio-group>
+      </van-cell>
+      <van-cell wx:if="{{validity_time_cate==1}}" required title="有效期至" bindtap="showDatePopup" value="{{validity_time}}" value-class="cell_val" />
+    </van-cell-group>
+		</view>
+    <van-button custom-class="btn_login" type="primary" block bindtap="saveInfo">提交</van-button>
+    <van-button custom-class="btn_back" type="default" block bindtap="goBack">返回</van-button>
+	</view>
+<van-popup show="{{ dateShow }}" position="bottom" bind:close="closeDatePopup" >
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  bind:cancel="closeDatePopup"
+  bind:confirm="confirmDatePopup"
+  min-date="{{ minDate }}"
+/>
+</van-popup>

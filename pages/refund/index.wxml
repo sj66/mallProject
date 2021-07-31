@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="refundlist">
+    <view class="refundlist-li" wx:for="{{refundList}}" wx:key="index">
+      <view class="refundlist-li-header">
+        <view class="refundlist-li-number">订单号：{{item.number}}</view>
+        <view class="refundlist-li-type">退款</view>
+      </view>
+      <view class="refundlist-li-top">
+        <view class="refundlist-li-pic">
+          <image src="{{item.url}}"></image>
+        </view>
+        <view class="refundlist-li-part">
+          <view class="refundlist-li-title">{{item.title}}</view>
+          <view class="refundlist-li-price">退款：￥{{item.price}}元</view>
+        </view>
+      </view>
+      <view class="refundlist-li-tip">
+        <text>退款成功</text>
+        <text>退款成功￥{{item.price}}元</text>
+      </view>
+      <view class="refundlist-li-btn">
+        <view class="refundlist-li-delete">删除记录</view>
+        <view class="refundlist-li-detail">查看详情</view>
+      </view>
+    </view>
+  </view>
+</view>

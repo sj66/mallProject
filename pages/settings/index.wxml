@@ -1,0 +1,7 @@
+<!--pages/settings/index.wxml-->
+<van-cell-group>
+  <van-cell title="切换身份" is-link bindtap="goSwitchIdentity"></van-cell>
+  <van-cell title="修改密码" is-link bindtap="goResetPsw"></van-cell>
+</van-cell-group>
+
+<van-button custom-class="btn_login" type="primary" block bindtap="logout">退出</van-button>

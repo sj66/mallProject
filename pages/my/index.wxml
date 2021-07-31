@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="container-header">
+    <view class="userinfo" bindtap="goLogin">
+      <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+      <view class="userinfo-avatar" id="avatar">Avatar</view>
+      <view class="usermotto">
+        <view class="username" wx:if="{{!isLogin}}">登录/注册</view>
+        <view class="username" wx:if="{{isLogin}}">{{userName}}</view>
+        <view class="usernumber" wx:if="{{isLogin}}">
+          <text>账号：{{account}}</text>
+          <image src="/public/orther_img/youjiantou.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="typelist">
+      <view class="typelist-li" wx:for="{{typeList}}" wx:key="index">
+        <navigator url="{{item.link}}" hover-class="none">
+          <view class="typelist-li-bg">
+            <view class="typelist-li-icon">
+              <!-- <image src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+              <image src="{{item.icon}}" mode="scaleToFill"></image>
+            </view>
+            <text class="typelist-li-label">{{item.title}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="container-invite">
+    <view class="invite">
+      <image src="/public/orther_img/coin.png"></image>
+      <text>邀请好友赚赏金</text>
+    </view>
+    <view class="oninvite">去邀请</view>
+  </view>
+  <view class="order-header" bindtap="onOrderType" data-id="0">
+    <text>我的订单</text>
+    <view class="onorder">
+      <text>查看全部订单</text>
+      <image src="/public/orther_img/youjiantou.png"></image>
+    </view>
+  </view>
+  <view class="container-order">
+    <view class="orderlist">
+      <view class="orderlist-li" wx:for="{{orderList}}" wx:key="index" bindtap="onOrderType" data-id="{{item.id}}">
+          <view class="orderlist-li-bg">
+            <view class="orderlist-li-icon">
+              <image src="{{item.icon}}" mode="scaleToFill"></image>
+            </view>
+            <text class="servicelist-li-label">{{item.title}}</text>
+          </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="service-header">我的服务</view>
+  <view class="container-service">
+    <view class="servicelist">
+      <view class="servicelist-li" wx:for="{{serviceList}}" wx:key="index">
+        <navigator url="{{item.link}}" hover-class="none">
+          <view class="servicelist-li-bg">
+            <view class="servicelist-li-icon">
+              <image src="{{item.icon}}" mode="scaleToFill"></image>
+            </view>
+            <text class="servicelist-li-label">{{item.title}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

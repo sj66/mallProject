@@ -1,0 +1,29 @@
+<!--pages/pay/index.wxml-->
+<view class="title">商城订单</view>
+<view class="price_box"><text class="price_tip">¥</text><text class="price">{{price}}</text></view>
+<van-cell-group custom-class="cell">
+  <van-cell title-class="cell_title" value-class="cell_value" title-width="120rpx" title="付款方" value="广东家之和药业有限公司" />
+</van-cell-group>
+<van-button wx:if="{{!is_pay}}" custom-class="btn_css" type="primary" block bindtap="getOrder">立即支付</van-button>
+<van-button wx:if="{{is_pay}}" custom-class="btn_css" type="primary" block  open-type="launchApp" app-parameter="wechat" bindlaunchapp="openAppEnd">返回APP</van-button>
+<van-popup show="{{ show }}" position="bottom" bind:close="closePopup" closeable round>
+  <view class="tui-popup-box">
+    <view class="tui-tip">支付成功!</view>
+    <view class="tui-product-box tui-recommend">
+      <view class="tui-popup-sub">猜您想要的产品</view>
+      <view class="tui-product-box tui-goods" wx:for="{{goodsList}}" wx:key="index">
+        <image class="tui-popup-img" src="{{item.img}}" />
+        <view class="tui-popup-price">
+          <view class="tui-pro-title">{{item.name}}</view>
+          <view class="tui-sub-title tui-size tui-gray">{{item.specs}}</view>
+          <view class="tui-sub-title tui-size tui-gray" style="padding: 0;">{{item.company}}</view>
+          <view class="tui-amount tui-bold">￥{{item.price}}</view>
+          <view class="tui-button">
+            <view class="tui-btn" style="margin-right:40rpx">收藏</view>
+            <view class="tui-btn">下单</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</van-popup>

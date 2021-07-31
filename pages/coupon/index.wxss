@@ -1,0 +1,73 @@
+/**index.wxss**/
+.container {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  background-color: #fff;
+} 
+.swiper-tab {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 80rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #eeeeee;
+  z-index: 99;
+}
+.tab-item { 
+  text-align: center;
+  font-size: 30rpx;
+  color: #777;
+}
+.swiper {
+  margin-top: 80rpx;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.on {
+  font-weight: bold;
+  color: #ff9908;
+  border-bottom: 5rpx solid #ff9908; 
+}  
+/* 合同信息 */
+.couponlist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.couponlist-li{
+  width: 90%;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2rpx solid #ff9908;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+.couponlist-li-price{
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #ff0000;
+}
+.couponlist-li-title{
+  font-size: 24rpx;
+}
+.couponlist-li-btn{
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #ff9908;
+  text-align: center;
+  border-radius: 20rpx;
+  border: 2rpx solid #ff9908;
+}

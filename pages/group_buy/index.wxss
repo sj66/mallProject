@@ -1,0 +1,321 @@
+/* pages/group_buy/index.wxss */
+/* 兑换积分  样式*/
+.container {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+} 
+/* 导航栏 */
+.swiper-tab {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+  z-index: 99;
+  border-top: 2rpx solid #eeeeee;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.tab-item { 
+  text-align: center;
+  font-size: 24rpx;
+  color: #777;
+}
+.timeSort{
+  width: 10rpx;
+  height: 24rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+.timeSort image{
+  width: 10rpx;
+  height: 10rpx;
+}
+/* 商品列表 */
+.goodslist{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding-top: 68rpx;
+}
+.goodslist-li{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding:20rpx 0; */
+  border-bottom: 2rpx solid #eeeeee;
+}
+/* 秒杀 */
+.tui-countdown-content{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #ff0000;
+}
+.tui-countdown-text{
+  color: #999999;
+}
+.goodslist-li-top{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.goodslist-li-pic{
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 20rpx;
+}
+.goodslist-li-pic image{
+  width: 100%;
+  height: 100%;
+}
+.goodslist-li-content{
+  font-size: 28rpx;
+  line-height: 37rpx;
+}
+.price-new{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff0000;
+}
+.price-old{
+  font-size: 24rpx;
+  color: #999999;
+  text-decoration:line-through;
+  margin-left: 20rpx;
+} 
+.goodslist-li-time{
+  font-size: 24rpx;
+  color: #999999;
+}
+.goodslist-li-bottom{
+  width: 100%;
+  height: 60rpx;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.purchase{
+  width: 260rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ffffff;
+  background-color: #bfbfbf;
+  margin-top: 20rpx;
+}
+.joinList{
+  margin-top: 20rpx;
+  width: 100%;
+  border: 2rpx solid #e6e6e6;
+  box-sizing: border-box;
+}
+.title{
+  width: 100%;
+  height: 50rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+.swiper-container {
+  margin-left: 20rpx;
+  width: 100%;
+  height: 50rpx;
+}
+ 
+.swiper-item {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  font-size: 24rpx;
+  color: #999999;
+  letter-spacing: 2rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper-item-left{
+  width: 450rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper-item-date{
+  margin-right: 40rpx;
+}
+.progress-text{
+  width: 100%;
+  font-size: 24rpx;
+  color: #bfbfbf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.progress {
+  overflow: hidden;  
+  width:700rpx;
+  height: 30rpx;  
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20rpx;  
+  margin-top: 10rpx; 
+  background-color: #e6e6e6;  
+  background-repeat: repeat-x;  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);  
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);  
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);  
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);  
+  -webkit-border-radius: 4rpx;  
+  -moz-border-radius: 4rpx;  
+  border-radius: 15rpx;   
+}
+.progress .bar {  
+  width: 0%;  
+  height: 100%;  
+  float: left;  
+  align-items: center;  
+  display: flex;  
+  justify-content: center;  
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  
+  background-color: #ff0000;  
+  background-repeat: repeat-x;  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);  
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);  
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);  
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);  
+  -webkit-box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  box-sizing: border-box;  
+  -webkit-transition: width 0.6s ease;  
+  -moz-transition: width 0.6s ease;  
+  -o-transition: width 0.6s ease;  
+  transition: width 0.6s ease;  
+}  
+.goodslist-li-btn{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 6rpx;
+  background-color: #ff0000;  
+}
+/* 弹窗 */
+.tui-popup-box {
+  position: relative;
+  padding: 30rpx 0 100rpx 0;
+  background-color: #FFFFFF;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tui-product-box {
+  display: flex;
+  align-items: flex-end;
+  align-items: center;
+  font-size: 26rpx;
+  padding-bottom: 30rpx;
+}
+.tui-padding {
+  padding:30rpx;
+  box-sizing: border-box;
+}
+
+.tui-popup-img {
+  height: 260rpx;
+  width: 260rpx;
+  border-radius: 24rpx;
+  display: block;
+}
+
+.tui-popup-price {
+  padding-left: 20rpx;
+  padding-bottom: 8rpx;
+}
+
+.tui-amount {
+  color: #ff201f;
+  font-size: 36rpx;
+}
+
+.tui-scrollview-box {
+  padding: 0 30rpx 30rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.tui-number {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  padding-top: 12rpx;
+  color: #999;
+}
+
+.tui-number-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0 30rpx 0;
+  box-sizing: border-box;
+}
+.tui-operation {
+  width: 100%;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 0.98);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tui-safearea-bottom {
+  width: 100%;
+  height: constant(safe-area-inset-bottom);
+  height: env(safe-area-inset-bottom);
+}
+
+.tui-operation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-top: 1rpx solid #eaeef1;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.tui-operation-right {
+  height: 140rpx;
+  padding-top: 0;
+}
+
+.tui-right-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tui-flex-1 {
+  flex: 1;
+  padding: 16rpx;
+}

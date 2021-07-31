@@ -1,0 +1,47 @@
+page{
+  background-color: #eeeeee;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.box{
+  width:80%; 
+  margin:auto; 
+  margin-top:15%; 
+  height:600rpx; 
+  border:2rpx solid #eeeeee;       /* 默认对话框隐藏 */
+  background-color: #fff;
+}
+/* .van-button--small {
+  margin-top: 100rpx !important;
+}
+.van-button {
+  margin-left: 120rpx !important;
+} */
+.weui-agree-text{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 25rpx;
+  height: 25rpx;
+  margin-bottom: 10rpx;
+}
+.weui-agree-checkbox{
+  margin-left: 30rpx;
+}
+.weui-agree-link{
+  color: #1989fa;
+}
+.weui-btn-area{
+  margin-top: 50rpx;
+}
+.weui-btn{
+  color: #fff;
+  background-color: #5395f5;
+}

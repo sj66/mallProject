@@ -1,0 +1,100 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/shop/index",
+    "pages/order/index",
+    "pages/order_detail/index",
+    "pages/search/index",
+    "pages/my/index",
+    "pages/popular/index",
+    "pages/exchange/index",
+    "pages/sign/index",
+    "pages/integral/index",
+    "pages/shop_car/index",
+    "pages/goods_detail/index",
+    "pages/center/index",
+    "pages/settings/index",
+    "pages/login/index",
+    "pages/register/index",
+    "pages/reset_psw/index",
+    "pages/authentication/index",
+    "pages/authentication/save",
+    "pages/forget_psw/index",
+    "pages/pay/index",
+    "pages/service/index",
+    "pages/my_order/index",
+    "pages/webview/index",
+    "pages/product/index",
+    "pages/mall/index",
+    "pages/agreement/index",
+    "pages/agreement_details/index",
+    "pages/negotiation/index",
+    "pages/find/index",
+    "pages/logs/logs",
+    "pages/purchase_records/index",
+    "pages/coupon/index",
+    "pages/datas/index",
+    "pages/handsel/index",
+    "pages/handsel_list/index",
+    "pages/photo/index",
+    "pages/record/index",
+    "pages/refund/index",
+    "pages/kind/index",
+    "pages/price/index",
+    "pages/broadcast/index",
+    "pages/my_salesman/index",
+    "pages/feedback/index",
+    "pages/help_center/index",
+    "pages/group_buy/index",
+    "pages/group_list/index",
+    "pages/my_group/index",
+    "pages/group_detail/index",
+    "pages/switch_identity/index",
+    "pages/create_group/index",
+    "pages/employ/index", 
+    "pages/discern/index",
+    "pages/order_pay/index",
+    "pages/collect/index",
+    "pages/match/index",
+    "pages/protocol/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "家之和商城",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#a2a2a2",
+    "selectedColor": "#09BB07",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "public/images/homeicon/home.png",
+        "selectedIconPath": "public/images/homeicon/selected_home.png"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "text": "商城",
+        "iconPath": "public/images/homeicon/shop.png",
+        "selectedIconPath": "public/images/homeicon/selected_shop.png"
+      },
+      {
+        "pagePath": "pages/integral/index",
+        "text": "积分",
+        "iconPath": "public/images/homeicon/score.png",
+        "selectedIconPath": "public/images/homeicon/selected_score.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "会员",
+        "iconPath": "public/images/homeicon/center.png",
+        "selectedIconPath": "public/images/homeicon/selected_center.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

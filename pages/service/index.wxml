@@ -1,0 +1,5 @@
+<!--pages/service/index.wxml-->
+<view class="btn_box">
+  <button class="btn" type="primary" open-type="contact">点击进入客服页面</button>
+  <button class="btn" type="default" open-type="launchApp" app-parameter="wechat" bindlaunchapp="openAppEnd">返回APP</button>
+</view>

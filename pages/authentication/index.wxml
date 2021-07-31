@@ -1,0 +1,192 @@
+<van-steps steps="{{ steps }}" active="{{ active }}" />
+<van-cell-group title="填写基本信息" wx:if="{{ active==0 }}">
+  <van-cell wx:if="{{info}}" required title="企业类型" value="{{ columns[value] }}" bindtap="showPopup" value-class="cell_val" />
+  <van-cell wx:else required title="企业类型" value="{{ columns[data.cate_val] }}" bindtap="showPopup" value-class="cell_val" />
+  <van-field wx:if="{{info}}"
+    value=""
+    clearable
+    required
+    label="企业名称"
+    placeholder="请输入企业名称"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="enterprise_name"
+  />
+  <van-field wx:else
+    value="{{ data.enterprise_name }}"
+    clearable
+    required
+    label="企业名称"
+    placeholder="请输入企业名称"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="enterprise_name"
+  />
+  <van-field
+    value="{{ [data.contacts_name] }}"
+    clearable
+    required
+    label="联系人"
+    placeholder="请输入联系人"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="contacts_name"
+  />
+  <van-field
+    value="{{ data.contacts_phone }}"
+    clearable
+    required
+    label="联系电话"
+    placeholder="请输入联系电话"
+    title-width="5.2em"
+    maxlength='11'
+    input-align="right"
+    bind:change="inputChange"
+    data-param="contacts_phone"
+  />
+  <van-field
+    value="{{ data.contacts_phone }}"
+    clearable
+    required
+    label="座机号码"
+    placeholder="请输入座机号码"
+    title-width="5.2em"
+    maxlength='11'
+    input-align="right"
+    bind:change="inputChange"
+    data-param="contacts_phone"
+  />
+  <van-field wx:if="{{info}}"
+    model:value="{{ province }}{{city }}{{ district }}"
+    readonly
+    required
+    label="营业执照地址"
+    placeholder="省市区县、乡镇等"
+    title-width="6.2em"
+    input-align="right"
+    bindtap="showAreaPopup"
+  />
+  <van-field wx:else
+    model:value="{{ data.province+data.city+data.district }}"
+    readonly
+    required
+    label="营业执照地址"
+    placeholder="省市区县、乡镇等"
+    title-width="6.2em"
+    input-align="right"
+    bindtap="showAreaPopup"
+  />
+  <van-field wx:if="{{info}}"
+    value=""
+    clearable
+    required
+    label="营业执照详细地址"
+    placeholder="请输入营业执照详细地址"
+    title-width="8em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="addr"
+  />
+  <van-field wx:else
+    value="{{ data.addr }}"
+    clearable
+    required
+    label="营业执照详细地址"
+    placeholder="请输入营业执照详细地址"
+    title-width="8em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="addr"
+  />
+  <van-field wx:if="{{info}}"
+    value=""
+    clearable
+    label="邮箱"
+    placeholder="请输入邮箱"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="email"
+  />
+  <van-field wx:else
+    value="{{ data.email }}"
+    clearable
+    label="邮箱"
+    placeholder="请输入邮箱"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="email"
+  />
+  <van-field wx:if="{{info}}"
+    value=""
+    clearable
+    label="邮政编码"
+    placeholder="请输入邮政编码"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="postal_code"
+  />
+  <van-field wx:else
+    value="{{ data.postal_code }}"
+    clearable
+    label="邮政编码"
+    placeholder="请输入邮政编码"
+    title-width="5.2em"
+    input-align="right"
+    bind:change="inputChange"
+    data-param="postal_code"
+  />
+
+</van-cell-group>
+
+<van-button wx:if="{{ active==0 }}" custom-class="btn_login" type="primary" block bindtap="enterpriseSubmit">提交</van-button>
+<van-button wx:if="{{ active==0 }}" custom-class="btn_back" type="default" block bindtap="goBack">返回</van-button>
+
+<van-cell-group title="上传资质证明" wx:if="{{ active==1 }}">
+  <van-cell required="{{ index==1 }}" title="营业执照" bindtap="goUpload" data-i="1" value-class="cell_val" is-link />
+  <van-cell required wx:if="{{ index==2 }}" title="医疗机构执业许可证" data-i="7" bindtap="goUpload" value-class="cell_val" is-link />
+  <van-cell required wx:if="{{ index==1 }}" title="药品经营许可证" bindtap="goUpload" value-class="cell_val" data-i="2" is-link />
+  <van-cell wx:if="{{ index==1 }}" title="药品经营质量管理规范认证证书" bindtap="goUpload" value-class="cell_val" data-i="3" is-link />
+  <van-cell required="{{ index==1 }}" title="法定代表人身份证" bindtap="goUpload" value-class="cell_val" data-i="4" is-link />
+  <van-cell  wx:if="{{ index==1 }}" title="食品经营许可证" bindtap="goUpload" value-class="cell_val" data-i="5" is-link />
+  <van-cell  wx:if="{{ index==1 }}" title="第二类医疗器械备案凭证" bindtap="goUpload" value-class="cell_val" data-i="6" is-link />
+  <van-cell  required title="采购收货证明或委托书（原件）" bindtap="goUpload" value-class="cell_val" data-i="8" is-link />
+</van-cell-group>
+
+<van-button wx:if="{{ active==1 }}" custom-class="btn_login" type="primary" block bindtap="saveInfo">提交</van-button>
+<van-button wx:if="{{ active==1 }}" custom-class="btn_back" type="default" block bindtap="goBack1">返回</van-button>
+
+<view wx:if="{{ active==2 }}">
+  <view style="text-align: center;padding-top: 20px;color: #1fb922;font-size: 24px;">
+    <van-icon name="checked" color="#2bb730" size="160rpx" />
+    <view>提交成功</view>
+  </view>
+  <view style="font-size: 32rpx;padding: 24rpx 30rpx;">
+    <view style="padding: 20rpx;">请尽快邮寄“采购收货证明或委托书”原件</view>
+    <view style="font-size: 28rpx;border: 1rpx solid #E0E0E0;">
+      <view style="border-bottom: 1rpx solid #E0E0E0;padding: 10rpx 20rpx;">收 件 人：广东家之和药业有限公司</view>
+      <view style="display:flex;border-bottom: 1rpx solid #E0E0E0;padding: 10rpx 20rpx;"><view style="width:200rpx">收件地址：</view><view>广东省广州市番禺区石基镇市莲路永善村段6号综合楼二楼</view></view>
+      <view style="padding: 10rpx 20rpx;">收件电话：186 20000 210 <text style="padding-left:40rpx;">020-2867 9677</text></view>
+    </view>
+  </view>
+  <van-button custom-class="btn_login" type="primary" block bindtap="goBack">完成</van-button>
+</view>
+
+<view style="height:50rpx;"></view>
+
+<van-popup show="{{ show }}" position="bottom" bind:close="closePopup" >
+<view class="popup_top_box">
+  <view bindtap="closePopup">取消</view>
+  <view style="color: #007aff;" bindtap="confirmPopup">确定</view>
+</view>
+  <van-picker columns="{{ columns }}" default-index="{{ index }}" bind:change="onChange" />
+</van-popup>
+
+<van-popup show="{{ areaShow }}" position="bottom" bind:close="closeAreaPopup" >
+  <van-area area-list="{{ areaList }}" bind:confirm="confirmAreaPopup" bind:cancel="closeAreaPopup" />
+</van-popup>

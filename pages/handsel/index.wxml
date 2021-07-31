@@ -1,0 +1,39 @@
+<!--pages/handsel/index.wxml-->
+<view class="container">
+  <view class="search">
+    <view class="search-header">
+      <image src="/public/orther_img/search.png"></image>
+      <input class="search-input" bindinput='query' placeholder="搜索" />
+    </view>
+    <div class="search_one" bindtap="reverse">
+      时间
+      <div class="lift">
+        <image src="/public/orther_img/lift.png"></image>
+      </div>
+    </div>
+  </view>
+  <scroll-view enable-flex="true" scroll-y="true" class="productlist" wx:if="{{timeSort}}">
+    <view class="productlist-li" wx:for="{{productList}}" wx:key="index" bindtap="onHandselList" data-content="{{item.content}}" data-id="{{item.id}}">
+      <view class='tui-countdown-content'>离活动结束：
+        <van-count-down time="{{ item.end_time }}" format="DD天HH:mm:ss" />
+      </view>
+      <view class="product-pic">
+        <image wx:if="{{item.thumb}}" src="{{item.thumb}}" :lazy-load="true"></image>
+        <image wx:else src="/public/orther_img/logo.png"></image>
+      </view>
+      <view class="product-activity">{{item.content}}</view>
+    </view>
+  </scroll-view>
+  <scroll-view enable-flex="true" scroll-y="true" class="productlist" wx:else>
+    <view class="productlist-li" wx:for="{{productList}}" wx:key="index" bindtap="onHandselList" data-content="{{item.content}}" data-id="{{item.id}}">
+      <view class='tui-countdown-content'>离活动结束：
+        <van-count-down time="{{ item.end_time }}" format="DD天HH:mm:ss" />
+      </view>
+      <view class="product-pic">
+        <image wx:if="{{item.thumb}}" src="{{item.thumb}}" :lazy-load="true"></image>
+        <image wx:else src="/public/orther_img/logo.png"></image>
+      </view>
+      <view class="product-activity">{{item.content}}</view>
+    </view>
+  </scroll-view>
+</view>

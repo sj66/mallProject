@@ -1,0 +1,19 @@
+/* pages/service/index.wxss */
+.btn_box{
+  width: 700rpx;
+  height: 300rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 150rpx;
+  right: 0;
+  margin: auto;
+}
+.btn{
+  width: 700rpx !important;
+  margin-top: 80rpx;
+  padding: 30rpx 0;
+}
+.btn:first-of-type{
+  margin-top: 0;
+}

@@ -1,0 +1,35 @@
+<!--pages/record/index.wxml-->
+<view class="container">
+  <view class="team-ranking">调价记录</view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">编号</view>
+      <view class="th">名称</view>
+      <view class="th">单位</view>
+      <view class="th">规格</view>
+      <view class="th">厂家</view>
+      <view class="th">下单数量</view>
+      <view class="th">申请价格</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="index">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.unit}}</view>
+        <view class="td">{{item.format}}</view>
+        <view class="td">{{item.factory}}</view>
+        <view class="td">{{item.number}}</view>
+        <view class="td border_right">{{item.price}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.unit}}</view>
+        <view class="td">{{item.format}}</view>
+        <view class="td">{{item.factory}}</view>
+        <view class="td">{{item.number}}</view>
+        <view class="td border_right">{{item.price}}</view>
+      </view>
+    </block>
+  </view>
+</view>

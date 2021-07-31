@@ -1,0 +1,25 @@
+<!--pages/center/index.wxml-->
+<view id="avatar_box" bindtap="goLogin">
+  <view id="avatar">Avatar</view>
+  <view class="tui-info" bindtap="goLogin">
+    <view wx:if="{{!isLogin}}" class="tui-nickname">登录/注册</view>
+    <view wx:if="{{isLogin}}" class="tui-nickname">{{userName}}</view>
+    <view wx:if="{{isLogin}}" class="tui-explain">帐号：{{account}}</view>
+  </view>
+  <view wx:if="{{isLogin}}" class="tui-btn-edit">
+    <image src="/public/images/center/icon_arrow.png" class="btn_edit" mode="widthFix"></image>
+  </view>
+</view>
+<view class="info_box">
+  <van-cell title="我的订单" value="查看全部订单" is-link bindtap="goMyOrder" data-cat="-1" border="{{false}}"></van-cell>
+  <van-grid>
+    <van-grid-item custom-class="order_item" icon="gold-coin-o" text="待付款" bindtap="goMyOrder" data-cat="0"></van-grid-item>
+    <van-grid-item custom-class="order_item" icon="send-gift-o" text="待发货" bindtap="goMyOrder" data-cat="1"></van-grid-item>
+    <van-grid-item custom-class="order_item" icon="logistics" text="待收货" bindtap="goMyOrder" data-cat="2"></van-grid-item>
+    <van-grid-item custom-class="order_item" icon="user-o" text="已完成" ></van-grid-item>
+  </van-grid>
+</view>
+<view style="height:50rpx;width:100%;"></view>
+<van-cell-group>
+  <van-cell title="设置" is-link bindtap="goSettings"></van-cell>
+</van-cell-group>

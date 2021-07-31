@@ -1,0 +1,32 @@
+<!--pages/employ/index.wxml-->
+<view class="container">
+  <view id="inputbox" class="box" wx:if="{{ showBox }}">
+    <van-cell-group>
+      <van-radio-group value="{{ radio }}" bind:change="onChange"
+        style="display:flex;font-size:28rpx;padding:26rpx 32rpx;margin-top: 60rpx; border-bottom: 2rpx solid rgba(0,0,0,0.03);">
+        <text style="margin-right:120rpx">性别</text>
+        <van-radio name="1" style="margin-right:20rpx">男</van-radio>
+        <van-radio name="2">女</van-radio>
+      </van-radio-group>
+      <van-field value="{{ age }}" label="年龄" placeholder="请输入年龄" bind:change="onAge" />
+      <van-field value="{{ weight }}" label="体重" placeholder="请输入体重/kg" bind:change="onWeight" />
+    </van-cell-group>
+    <!--相关协议-->
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+        <view class="weui-agree-text">
+          <checkbox class="weui-agree-checkbox" id="weuiAgree" value="agree" color="#1989fa" checked="{{}}" />
+          阅读并同意<view catchtap="onProtocol" class="weui-agree-link">《人脸识别功能协议》</view>
+        </view>
+      </label>
+    </checkbox-group>
+    <!--提交按钮-->
+    <view class="weui-btn-area">
+      <button class="weui-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" disabled='{{btn_disabled}}'>开始人脸识别验证</button>
+    </view>
+    <!-- <van-button type="primary" size="small" bindtap="onTrue">确认</van-button> -->
+  </view>
+  <camera wx:if="{{showCamera}}" device-position="front" flash="off" binderror="error" style="position: relative;width: 300px; height: 300px;margin: 50px"></camera>
+  <image mode="widthFix" src="{{src}}"></image>
+  <button wx:if="{{showBtn}}" type="primary" style="margin-top:100rpx" bindtap="submitPhoto">确认</button>
+</view>

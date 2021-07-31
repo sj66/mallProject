@@ -1,0 +1,189 @@
+<!--pages/order_pay/index.wxml-->
+<view class="container">
+  <view class="swiper-tab">
+    <block wx:for="{{swipertab}}" wx:key="sptab">
+      <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}"
+        bindtap="tabSwitch">{{item.name}}</view>
+    </block>
+  </view>
+  <wxs module="filters" src="./filename.wxs"></wxs>
+  <swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH-41}}px"
+    bindchange="tabChange">
+    <!-- 待付款 -->
+    <swiper-item>
+      <scroll-view enable-flex="true" class="hot-box" scroll-y="true">
+        <block wx:for="{{waitPayOrder}}" wx:key="index">
+          <view class="orderDetails">
+            <view class="orderListTitle">
+              <text class="userName">订单号：{{item.name}}</text>
+              <text class="orderStatus">{{item.state}}</text>
+            </view>
+            <view class="orderListDetail">
+              <view class="productInfo">
+                <view class="productTitle">下单时间：{{item.time}}</view>
+                <view class="productPrice" data-index="{{index}}" bindtap="onOpenPay">订单明细：<text class="onLook">点击查看</text></view>
+              </view>
+              <view class="productAll">合计：￥{{item.money}}</view>
+            </view>
+          </view>
+          <view class="order_detail" wx:if="{{item.isTrue}}">
+            <view class="table">
+              <view class="tr bg-w">
+                <view class="th th-1">产品名称/生产企业</view>
+                <view class="th th-2">规格</view>
+                <view class="th th-3">数量</view>
+                <view class="th th-4">单价</view>
+                <view class="th th-5">小计</view>
+              </view>
+              <block wx:for="{{listData}}" wx:key="index">
+                <view class="tr bg-g">
+                  <view class="td td-1" bindtap="goDetail"
+        data-gid="{{item.goods_id}}" data-qty="{{item.qty}}" data-price="{{item.price}}">
+                    <view class="td-info td-line">{{item.goods_id}} {{item.name}}</view>
+                    <view class="td-info">{{item.company}}</view>
+                  </view>
+                  <view class="td td-2">{{item.specs}}</view>
+                  <view class="td td-3">{{item.car_num}}{{item.unit}}</view>
+                  <view class="td td-4">{{item.price}}</view>
+                  <view class="td td-5 border_right">{{item.total}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 待发货 -->
+    <swiper-item>
+      <scroll-view enable-flex="true" class="hot-box" scroll-y="true">
+        <block wx:for="{{alreadyOrder}}" wx:key="index">
+          <view class="orderDetails">
+            <view class="orderListTitle">
+              <text class="userName">订单号：{{item.name}}</text>
+              <text class="orderStatus">{{item.state}}</text>
+            </view>
+            <view class="orderListDetail">
+              <view class="productInfo">
+                <view class="productTitle">下单时间：{{item.time}}</view>
+                <view class="productPrice" data-index="{{index}}" bindtap="onOpenAlready">订单明细：<text class="onLook">点击查看</text></view>
+              </view>
+              <view class="productAll">合计：￥{{item.money}}</view>
+            </view>
+          </view>
+          <view class="order_detail" wx:if="{{item.isTrue}}">
+            <view class="table">
+              <view class="tr bg-w">
+                <view class="th th-1">产品名称/生产企业</view>
+                <view class="th th-2">规格</view>
+                <view class="th th-3">数量</view>
+                <view class="th th-4">单价</view>
+                <view class="th th-5">小计</view>
+              </view>
+              <block wx:for="{{listData}}" wx:key="index">
+                <view class="tr bg-g">
+                  <view class="td td-1" bindtap="goDetail"
+        data-gid="{{item.goods_id}}" data-qty="{{item.qty}}" data-price="{{item.price}}">
+                    <view class="td-info td-line">{{item.goods_id}} {{item.name}}</view>
+                    <view class="td-info">{{item.company}}</view>
+                  </view>
+                  <view class="td td-2">{{item.specs}}</view>
+                  <view class="td td-3">{{item.car_num}}{{item.unit}}</view>
+                  <view class="td td-4">{{item.price}}</view>
+                  <view class="td td-5 border_right">{{item.total}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 待收货 -->
+    <swiper-item>
+      <scroll-view enable-flex="true" class="hot-box" scroll-y="true">
+        <block wx:for="{{lostOrder}}" wx:key="index">
+          <view class="orderDetails">
+            <view class="orderListTitle">
+              <text class="userName">订单号：{{item.name}}</text>
+              <text class="orderStatus">{{item.state}}</text>
+            </view>
+            <view class="orderListDetail">
+              <view class="productInfo">
+                <view class="productTitle">下单时间：{{item.time}}</view>
+                <view class="productPrice" data-index="{{index}}" bindtap="onOpenLost">订单明细：<text class="onLook">点击查看</text></view>
+              </view>
+              <view class="productAll">合计：￥{{item.money}}</view>
+            </view>
+          </view>
+          <view class="order_detail" wx:if="{{item.isTrue}}">
+            <view class="table">
+              <view class="tr bg-w">
+                <view class="th th-1">产品名称/生产企业</view>
+                <view class="th th-2">规格</view>
+                <view class="th th-3">数量</view>
+                <view class="th th-4">单价</view>
+                <view class="th th-5">小计</view>
+              </view>
+              <block wx:for="{{listData}}" wx:key="index">
+                <view class="tr bg-g">
+                  <view class="td td-1" bindtap="goDetail"
+        data-gid="{{item.goods_id}}" data-qty="{{item.qty}}" data-price="{{item.price}}">
+                    <view class="td-info td-line">{{item.goods_id}} {{item.name}}</view>
+                    <view class="td-info">{{item.company}}</view>
+                  </view>
+                  <view class="td td-2">{{item.specs}}</view>
+                  <view class="td td-3">{{item.car_num}}{{item.unit}}</view>
+                  <view class="td td-4">{{item.price}}</view>
+                  <view class="td td-5 border_right">{{item.total}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 已完成 -->
+    <swiper-item>
+      <scroll-view enable-flex="true" class="hot-box" scroll-y="true">
+        <block wx:for="{{endOrder}}" wx:key="index">
+          <view class="orderDetails">
+            <view class="orderListTitle">
+              <text class="userName">订单号：{{item.name}}</text>
+              <text class="orderStatus">{{item.state}}</text>
+            </view>
+            <view class="orderListDetail">
+              <view class="productInfo">
+                <view class="productTitle">下单时间：{{item.time}}</view>
+                <view class="productPrice" data-index="{{index}}" bindtap="onOpenEnd">订单明细：<text class="onLook">点击查看</text></view>
+              </view>
+              <view class="productAll">合计：￥{{item.money}}</view>
+            </view>
+          </view>
+          <view class="order_detail" wx:if="{{item.isTrue}}">
+            <view class="table">
+              <view class="tr bg-w">
+                <view class="th th-1">产品名称/生产企业</view>
+                <view class="th th-2">规格</view>
+                <view class="th th-3">数量</view>
+                <view class="th th-4">单价</view>
+                <view class="th th-5">小计</view>
+              </view>
+              <block wx:for="{{listData}}" wx:key="index">
+                <view class="tr bg-g">
+                  <view class="td td-1" bindtap="goDetail"
+        data-gid="{{item.goods_id}}" data-qty="{{item.qty}}" data-price="{{item.price}}">
+                    <view class="td-info td-line">{{item.goods_id}} {{item.name}}</view>
+                    <view class="td-info">{{item.company}}</view>
+                  </view>
+                  <view class="td td-2">{{item.specs}}</view>
+                  <view class="td td-3">{{item.car_num}}{{item.unit}}</view>
+                  <view class="td td-4">{{item.price}}</view>
+                  <view class="td td-5 border_right">{{item.total}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

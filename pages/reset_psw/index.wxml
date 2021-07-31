@@ -1,0 +1,28 @@
+<!--pages/reset_psw/index.wxml-->
+<van-cell-group>
+  <van-cell  title-width="5.2em" title="手机号" value="{{account}}" value-class="cell_val"></van-cell>
+
+  <van-field
+    model:value="{{ sms }}"
+    center
+    clearable
+    label="验证码"
+    placeholder="请输入验证码"
+    title-width="5.2em"
+    maxlength='6'
+    use-button-slot
+  >
+    <van-button slot="button" size="small" type="primary" bindtap="sendSms">{{code_txt}}</van-button>
+  </van-field>
+  <van-field
+    model:value="{{ psw }}"
+    type="password"
+    label="密  码"
+    placeholder="请输入密码"
+    password
+    title-width="5.2em"
+  />
+</van-cell-group>
+
+<van-button custom-class="btn_login" type="primary" block bindtap="subHandle">提交</van-button>
+<van-button custom-class="btn_back" type="default" block bindtap="goBack">返回</van-button>

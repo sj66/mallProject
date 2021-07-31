@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="swiper-tab">
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">推荐直播</view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">直播预告</view>
+  </view>
+  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item>
+      <view class="broadcastlist">
+        <view class="broadcastlist-li">
+          <navigator url="{{item.link}}" hover-class="none">
+            <view class="broadcast-pic">
+              <image src="/public/orther_img/bg.png"></image>
+            </view>
+            <view class="broadcast-play">
+              <view class="replay">回放</view>
+              <view class="look">15.31万观看</view>
+            </view>
+            <view class="broadcast-msg">三九集团直播日</view>
+            <view class="broadcast-info">
+              <view class="broadcast-help">“帮”选好货</view>
+              <view class="broadcast-like">
+                <image class="broadcast-heart" src="/public/orther_img/my_favorites.png"></image>
+                <text class="broadcast-number">2910</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class="broadcastlist-li">
+          <navigator url="{{item.link}}" hover-class="none">
+            <view class="broadcast-pic">
+              <image src="/public/orther_img/bg.png"></image>
+            </view>
+            <view class="broadcast-play">
+              <view class="replay">回放</view>
+              <view class="look">15.31万观看</view>
+            </view>
+            <view class="broadcast-msg">三九集团直播日</view>
+            <view class="broadcast-info">
+              <view class="broadcast-help">“帮”选好货</view>
+              <view class="broadcast-like">
+                <image class="broadcast-heart" src="/public/orther_img/my_favorites.png"></image>
+                <text class="broadcast-number">2910</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="broadcastlist">
+        <view class="broadcastlist-li">
+          <navigator url="{{item.link}}" hover-class="none">
+            <view class="broadcast-pic">
+              <image src="/public/orther_img/bg.png"></image>
+            </view>
+            <view class="broadcast-play">
+              <view class="replay">回放</view>
+              <view class="look">15.31万观看</view>
+            </view>
+            <view class="broadcast-msg">三九集团直播日</view>
+            <view class="broadcast-info">
+              <view class="broadcast-help">“帮”选好货</view>
+              <view class="broadcast-like">
+                <image class="broadcast-heart" src="/public/orther_img/my_favorites.png"></image>
+                <text class="broadcast-number">2910</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class="broadcastlist-li">
+          <navigator url="{{item.link}}" hover-class="none">
+            <view class="broadcast-pic">
+              <image src="/public/orther_img/bg.png"></image>
+            </view>
+            <view class="broadcast-play">
+              <view class="replay">回放</view>
+              <view class="look">15.31万观看</view>
+            </view>
+            <view class="broadcast-msg">三九集团直播日</view>
+            <view class="broadcast-info">
+              <view class="broadcast-help">“帮”选好货</view>
+              <view class="broadcast-like">
+                <image class="broadcast-heart" src="/public/orther_img/my_favorites.png"></image>
+                <text class="broadcast-number">2910</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper> -->
+</view>

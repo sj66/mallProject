@@ -1,0 +1,195 @@
+<!--pages/integral/index.wxml-->
+<view class="container">
+  <view class="search">
+    <view class="search-header" bindtap="suo">
+      <image src="/public/orther_img/search.png"></image>
+      <input class="search-input" placeholder="输入商品名称、ID、厂家等信息" />
+    </view>
+  </view>
+  <view class="swiper-tab">
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">好礼推荐</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li  {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">手机数码</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li  {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">家用电器</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li  {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">家纺餐厨</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">电脑办公</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">美妆个护</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==6 ? 'on' : ''}}" data-current="6" bindtap="swichNav">运动户外</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==7 ? 'on' : ''}}" data-current="7" bindtap="swichNav">健康保健</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==8 ? 'on' : ''}}" data-current="8" bindtap="swichNav">智能家庭</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==9 ? 'on' : ''}}" data-current="9" bindtap="swichNav">美食酒饮</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==10 ? 'on' : ''}}" data-current="10" bindtap="swichNav">家具家装</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==11 ? 'on' : ''}}" data-current="11" bindtap="swichNav">服装配饰</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==12 ? 'on' : ''}}" data-current="12" bindtap="swichNav">日用文创</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==13 ? 'on' : ''}}" data-current="13" bindtap="swichNav">宠物生活</view>
+    </view>
+    <view class="tab-item">
+      <view class="tab-li {{currentTab==14 ? 'on' : ''}}" data-current="14" bindtap="swichNav">好礼海购</view>
+    </view>
+  </view>
+  <swiper style="height: {{clientHeight?clientHeight+'px':'auto'}}" class="swiper" current="{{currentTab}}"
+    duration="200" bindchange="swiperChange">
+    <swiper-item>
+      <scroll-view enable-flex="true" scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" class="classify">
+        <view class="navListBox">
+          <view class="navListTitle">为你推荐</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList1}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="navListBox">
+          <view class="navListTitle">精选专区</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList2}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view enable-flex="true" scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" class="classify">
+        <view class="navListBox">
+          <view class="navListTitle">今日推荐</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList3}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view enable-flex="true" scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" class="classify">
+        <view class="navListBox">
+          <view class="navListTitle">热门精选</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList4}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="navListBox">
+          <view class="navListTitle">厨卫大电</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList5}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view enable-flex="true" scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" class="classify">
+        <view class="navListBox">
+          <view class="navListTitle">家纺</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList6}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="navListBox">
+          <view class="navListTitle">枕头</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList7}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="navListBox">
+          <view class="navListTitle">锅</view>
+          <view class="activitylist">
+            <view class="activitylist-li" wx:for="{{activityList8}}" wx:key="index">
+              <navigator url="{{item.link}}" hover-class="none">
+                <view class="activity-bg">
+                  <view class="activity-pic">
+                    <image src="{{item.pic}}"></image>
+                  </view>
+                </view>
+                <view class="activity-msg">{{item.drug}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-section">
+    <swiper class="page-swiper" indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="index">
+        <swiper-item>
+          <image class="page-banner" src="{{item.icon}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="typelist">
+    <view class="typelist-li" wx:for="{{typeList}}" wx:key="index">
+      <navigator url="{{item.link}}" hover-class="none">
+        <view class="typelist-li-bg">
+          <view class="typelist-li-icon">
+            <image src="{{item.icon}}" mode="scaleToFill"></image>
+          </view>
+          <text class="typelist-li-label">{{item.title}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="servicelist">
+    <view class="servicelist-li" wx:for="{{serviceList}}" wx:key="index">
+      <navigator url="{{item.link}}" hover-class="none">
+        <view class="servicelist-li-bg">
+          <view class="servicelist-li-icon">
+            <image src="{{item.icon}}" mode="scaleToFill"></image>
+          </view>
+          <text class="servicelist-li-label">{{item.title}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

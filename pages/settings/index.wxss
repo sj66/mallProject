@@ -1,0 +1,9 @@
+/* pages/settings/index.wxss */
+.btn_login{
+  padding: 0;
+  margin-top:50rpx;
+}
+.van-button--normal{
+  width: 720rpx !important;
+  border-radius: 6rpx !important;
+}

@@ -1,0 +1,11 @@
+<!--pages/discern/index.wxml-->
+<view class="container">
+  <view wx:if="{{showCamera}}">
+    <camera device-position="front" flash="off" binderror="error" style="position: relative;width: 300px; height: 300px;margin: 50px"></camera>
+    <view class="line" wx:if="{{showLine}}"></view>
+    <!-- 获取手机号 -->
+    <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">面子有多大</button>
+  </view>
+  <image mode="widthFix" src="{{src}}"></image>
+  <button wx:if="{{showBtn}}" type="primary" style="margin-top:100rpx" bindtap="submitPhoto">确认</button>
+</view>

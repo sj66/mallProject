@@ -1,0 +1,28 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+.salesman-info{
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.salesman-img{
+  width: 400rpx;
+  height: 400rpx;
+}
+.salesman-img image{
+  width: 100%;
+  height: 100%;
+}
+.salesman-data{
+  text-align: start;
+  color: #00556a;
+  margin-top: 30rpx;
+}

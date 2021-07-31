@@ -1,0 +1,259 @@
+/* index.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeeeee;
+} 
+.page-section{
+  width: 100%;
+  height: 520rpx;
+  background-color: #ffffff;
+}
+.page-swiper{
+  width: 100%;
+  height: 520rpx;
+}
+.page-banner{
+  width: 100%;
+  height: 100%;
+}
+/* 列表样式 */
+.typelist {
+  position: relative;
+  overflow: hidden;
+  width:99%;
+  background-color: #fff;
+}
+.typelist:before {
+  content:" ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1rpx;
+  border-top:1rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5); 
+}
+.typelist:after{
+  content:" ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-left:1rpx solid #ffffff;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+  
+.typelist-li {
+  position: relative;
+  float: left;
+  padding: 40rpx 10rpx;
+  width: 25%;
+  box-sizing: border-box;
+}
+  
+.typelist-li:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-right: 1rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+.typelist-li:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+  
+.typelist-li:active {
+  background-color: #ececec;
+}
+  
+.typelist-li-bg {
+  position: relative;
+  float: left;
+  padding: 0rpx 0rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+  
+.typelist-li-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+  
+.typelist-li-icon image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+  
+.typelist-li-icon  + .typelist-li-label {
+  margin-top: 5rpx;
+}
+  
+.typelist-li-label {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 八宫格样式 */
+.servicelist {
+  position: relative;
+  overflow: hidden;
+  width:99%;
+  background-color: #fff;
+  border-top: 14rpx solid #eeeeee;
+}
+.servicelist:before {
+  content:" ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  /* height: 28rpx;
+  border-top:28rpx solid #eeeeee; */
+  height: 2rpx;
+  border-top:2rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5); 
+}
+.servicelist:after{
+  content:" ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* width: 28rpx;
+  border-left:28rpx solid #eeeeee; */
+  width: 2rpx;
+  border-left:2rpx solid #ffffff;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+  
+.servicelist-li {
+  position: relative;
+  float: left;
+  padding: 40rpx 10rpx;
+  width: 33.3333333%;
+  box-sizing: border-box;
+}
+.servicelist-li:nth-of-type(1){
+  width: 66.66%;
+  background-image: url(https://jzh.hulukeji.cn/purchase_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.servicelist-li:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* width: 28rpx;
+  border-right: 28rpx solid #eeeeee; */
+  width: 2rpx;
+  border-right: 2rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+.servicelist-li:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* height: 28rpx;
+  border-bottom: 28rpx solid #eeeeee; */
+  height: 2rpx;
+  border-bottom: 2rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+  
+.servicelist-li:active {
+  background-color: #ececec;
+}
+  
+.servicelist-li-bg {
+  position: relative;
+  float: left;
+  padding: 0rpx 0rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+  
+.servicelist-li-icon {
+  width: 58rpx;
+  height: 58rpx;
+  margin: 0 auto;
+  margin-bottom: 26rpx;
+}
+  
+.servicelist-li-icon image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+  
+.servicelist-li-icon  + .servicelist-li-label {
+  margin-top: 5rpx;
+}
+  
+.servicelist-li-label {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

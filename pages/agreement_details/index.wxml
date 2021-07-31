@@ -1,0 +1,115 @@
+<!--pages/agreement_details/index.wxml-->
+<view class="container">
+  <view class="protocol-coding">合同编码：{{protocolList.id_code}}</view>
+  <view class="protocol-content">
+    <parser html="{{protocolList.content}}"/>
+  </view>
+  <view class="protocol-title">{{protocolList.goods_title}}</view>
+  <view class="onopen" bindtap="onopen">商品详情（点击查看）↓</view>
+  <!-- <view class="datalist" hidden="{{hiddenDatalist}}">
+    <view class="th">商品列表</view>
+    <view wx:for="{{listData}}" wx:key="index" class="data-table">
+      <view class="tr">
+        <view class="td">{{index+1}}</view>
+      </view>
+      <view class="tr-1">
+        <view class="td-1">ID</view>
+        <view class="td-1">产品名称</view>
+        <view class="td-1">规格</view>
+        <view class="td-1">生产企业</view>
+      </view>
+      <view class="tr-2">
+        <view class="td-2">{{item.goods_id}}</view>
+        <view class="td-2">{{item.name}}</view>
+        <view class="td-2">{{item.pack_specs}}</view>
+        <view class="td-2">{{item.maker_name}}</view>
+      </view>
+      <view class="tr-3">
+        <view class="td-3">数量</view>
+        <view class="td-3">单位</view>
+        <view class="td-3">单价</view>
+        <view class="td-3">合计</view>
+      </view>
+      <view class="tr-4">
+        <view class="td-4">{{item.num}}</view>
+        <view class="td-4">{{item.unit1}}</view>
+        <view class="td-4">{{item.price}}</view>
+        <view class="td-4">{{item.total}}</view>
+      </view>
+    </view>
+  </view> -->
+  <view class="table" hidden="{{hiddenDatalist}}">
+    <view class="th">商品列表</view>
+    <view class="tr">
+      <view class="td td-1 t1">序号</view>
+      <view class="td td-2 t1 t2">商品名称</view>
+      <view class="td td-3 t1">规格/生产企业</view>
+      <view class="td td-4 t1">数量/单价</view>
+      <view class="td td-5 t1 t2">合计</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="index" class="data-table">
+      <view class="tr">
+        <view class="td td-1">{{index+1}}</view>
+        <view class="td td-2">{{item.name}}</view>
+        <view class="td td-3">
+          <view>{{item.pack_specs}}</view>
+          <view>{{item.maker_name}}</view>
+        </view>
+        <view class="td td-4">
+          <view>{{item.num}}{{item.unit1}}</view>
+          <view>{{item.price}}元</view>
+        </view>
+        <view class="td td-5">{{item.total}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="protocol-content2">
+    <parser html="{{protocolList.content2}}"/>
+  </view>
+  <view class="protocol-deputy">
+    <view class="protocol-time">1、{{protocolList.start_time}}至{{protocolList.end_time}}</view>
+    <view class="protocol-content">以下内容空白，双方签字：</view>
+    <view class="protocol-deputy-A">
+      <view>甲方(卖方):<text class="line">广东家之和药业有限公司</text></view>
+      <view>签约代表:<text class="online"></text></view>
+      <view>联系电话:<text class="line">020-28679675</text></view>
+      <view class="datalist-li-stamp" wx:if="{{tab==2}}">
+        <image src="/public/orther_img/stamp.png"></image>
+      </view>
+    </view>
+    <view class="protocol-deputy-B">
+      <view>乙方(买方):<text class="line" wx:if="{{tab>1}}">{{userinfo.enterprise}}</text><text class="online" wx:else></text></view>
+      <view>签约代表:<text class="line" wx:if="{{tab>1}}">{{userinfo.name}}</text><text class="online" wx:else></text></view>
+      <view>联系电话:<text class="line" wx:if="{{tab>1}}">{{userinfo.phone}}</text><text class="online" wx:else></text></view>
+    </view>
+  </view>
+  <view class="contract-date">签约日期:<text class="line">{{protocolList.sign_up_time}}</text></view>
+  <view class="datalist-li-btn" bindtap="onSign" wx:if="{{tab==1}}">
+    <view class="btn">签订</view>
+  </view>
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}"> 
+    <view class="modal-title">签订验证</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        {{userinfo.name}}
+        <!-- <input placeholder-class="input-holder" type="number" maxlength="10" class="input" placeholder="姓名" value="{{userinfo.name}}" bindinput="phoneName"></input>  -->
+      </view>
+      <view class="modal-input">
+        {{userinfo.phone}}
+        <!-- <input placeholder-class="input-holder" type="number" maxlength="30" class="input" placeholder="电话" value="{{userinfo.phone}}" bindinput="phoneInput"></input>  -->
+      </view>
+      <view class="modal-input">
+        <input type="number" maxlength="10" class="input" placeholder="请输入验证码" bindinput="phoneNumber"/>
+        <!-- <button type="number" class="button" bindtap="sendPhone">发送验证码</button> -->
+        <button type="number" class="button" disabled='{{disabled}}' data-id="2" bindtap="sendPhone">{{time}}</button>
+      </view>
+    </view > 
+    <view class = "modal-footer"> 
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view> 
+    </view>
+  </view> 
+</view>
+

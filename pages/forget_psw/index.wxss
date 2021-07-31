@@ -1,0 +1,18 @@
+/* pages/forget_psw/index.wxss */
+.btn_login{
+  padding: 0;
+  margin-top:50rpx;
+}
+.van-button--normal{
+  width: 720rpx !important;
+  border-radius: 12rpx !important;
+}
+.van-button--small{
+  width: 160rpx !important;
+  border-radius: 12rpx !important;
+  font-size: 24rpx !important;
+}
+.btn_back{
+  padding: 0;
+  margin-top:30rpx;
+}
